@@ -227,7 +227,7 @@
         "level": "easy",
         "name": "Jacksonville International Airport",
         "premium": false,
-        "disabled": true
+        "disabled": false
     },
     {
         "icao": "kjfk",
