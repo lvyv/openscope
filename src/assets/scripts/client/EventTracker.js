@@ -14,7 +14,7 @@ class EventTracker {
      */
     constructor() {
         if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+            console.warn('Event tracking is disabled because we couldn\'t find `gtag` on the window');
 
             return;
         }
@@ -36,7 +36,7 @@ class EventTracker {
      */
     recordEvent(category, action, label, value = null) {
         if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+            console.warn('Event tracking is disabled because we couldn\'t find `gtag` on the window');
 
             return;
         }
@@ -64,7 +64,7 @@ class EventTracker {
      */
     recordClickOnOutboundLink(url) {
         if (!this._isEnabled()) {
-            console.error('Event tracking is disabled because we couldn\'t find `gtag` on the window');
+            console.warn('Event tracking is disabled because we couldn\'t find `gtag` on the window');
 
             return;
         }

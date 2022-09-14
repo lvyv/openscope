@@ -19,11 +19,11 @@ import { radiansToDegrees } from '../utilities/unitConverters';
  */
 const UI_TRAFFIC_MODAL_TEMPLATE = `
     <div class="traffic-dialog dialog notSelectable">
-        <p class="dialog-title">Traffic rate</p>
+        <p class="dialog-title">机场流量</p>
         <div class="dialog-body nice-scrollbar"></div>
         <div class="dialog-footer form-element">
-            <button id="reset-button" class="js-trafficDefaultButton button">Default</button>
-            <button id="restart-button" class="js-trafficRestartButton button">Restart</button>
+            <button id="reset-button" class="js-trafficDefaultButton button">缺省值</button>
+            <button id="restart-button" class="js-trafficRestartButton button">重启动</button>
         </div>
     </div>`;
 
@@ -291,7 +291,7 @@ export default class TrafficRateController {
      * @return {jquery|HTML Element}
      */
     _buildWindDirectionSlider(value) {
-        const name = 'wind direction';
+        const name = '风向';
         const template = `
             <div class="form-element">
                 <div class="form-label">${name}</div>
@@ -316,7 +316,7 @@ export default class TrafficRateController {
      * @return {jquery|HTML Element}
      */
     _buildWindSpeedSlider(value) {
-        const name = 'wind speed';
+        const name = '风速';
         const template = `
             <div class="form-element">
                 <div class="form-label">${name}</div>

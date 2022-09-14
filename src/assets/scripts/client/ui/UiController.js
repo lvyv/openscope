@@ -2,7 +2,7 @@ import $ from 'jquery';
 import _keys from 'lodash/keys';
 import AirportController from '../airport/AirportController';
 import EventBus from '../lib/EventBus';
-import EventTracker from '../EventTracker';
+// import EventTracker from '../EventTracker';
 import GameController from '../game/GameController';
 import SettingsController from './SettingsController';
 import TrafficRateController from './TrafficRateController';
@@ -523,7 +523,7 @@ class UiController {
 
         if (warn) {
             html.addClass(SELECTORS.CLASSNAMES.WARN);
-            EventTracker.recordEvent(TRACKABLE_EVENT.UI_LOG, 'error', message);
+            // EventTracker.recordEvent(TRACKABLE_EVENT.UI_LOG, 'error', message);
         }
 
         this.$log.append(html);
@@ -734,7 +734,7 @@ class UiController {
      */
 
     _onClickOpenAirportDialog() {
-        EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-switcher', 'open');
+        // EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-switcher', 'open');
         this.$airportDialog.addClass(SELECTORS.CLASSNAMES.OPEN);
 
         const $previousActiveAirport = this.$airportDialogBody.find(SELECTORS.DOM_SELECTORS.AIRPORT_LIST_ITEM_IS_ACTIVE);
@@ -756,7 +756,7 @@ class UiController {
      * @method _onInitiateAirportSearch
      */
     _onInitiateAirportSearch() {
-        EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-search', 'start');
+        // EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-search', 'start');
 
         const value = this.$airportSearch.val().toLowerCase();
 
@@ -773,7 +773,7 @@ class UiController {
      * @private
      */
     _onClickCloseAirportDialog() {
-        EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-switcher', 'close');
+        // EventTracker.recordEvent(TRACKABLE_EVENT.AIRPORTS, 'airport-switcher', 'close');
         this.$airportDialog.removeClass(SELECTORS.CLASSNAMES.OPEN);
         this.$switchAirport.removeClass(SELECTORS.CLASSNAMES.ACTIVE);
         this.$airportSearch.val(null);
@@ -800,11 +800,11 @@ class UiController {
      */
     onToggleAirportGuide() {
         this.$toggleAirportGuide.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'airport-guide',
-            `airport-guide:${this.$toggleAirportGuide.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'airport-guide',
+        //     `airport-guide:${this.$toggleAirportGuide.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_AIRPORT_GUIDE);
     }
 
@@ -815,11 +815,11 @@ class UiController {
      */
     onToggleAirspace(event) {
         this.$toggleAirspace.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'airspace',
-            `${this.$toggleAirspace.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'airspace',
+        //     `${this.$toggleAirspace.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_AIRSPACE);
     }
 
@@ -838,11 +838,11 @@ class UiController {
      */
     onToggleLabels(event) {
         this.$toggleLabels.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'fix-runway-labels',
-            `${this.$toggleLabels.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'fix-runway-labels',
+        //     `${this.$toggleLabels.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_LABELS);
     }
 
@@ -852,11 +852,11 @@ class UiController {
     */
     onToggleOptions() {
         this.$toggleOptions.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.SETTINGS,
-            'toggle-dialog',
-            `${this.$toggleOptions.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.SETTINGS,
+        //     'toggle-dialog',
+        //     `${this.$toggleOptions.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this.settingsController.toggleDialog();
     }
 
@@ -866,11 +866,11 @@ class UiController {
      */
     onToggleRestrictedAreas(event) {
         this.$toggleRestrictedAreas.toggleClass(`${SELECTORS.DOM_SELECTORS.WARNING_BUTTON} ${SELECTORS.CLASSNAMES.ACTIVE}`);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'restricted',
-            `${this.$toggleRestrictedAreas.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'restricted',
+        //     `${this.$toggleRestrictedAreas.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_RESTRICTED_AREAS);
     }
 
@@ -881,11 +881,11 @@ class UiController {
      */
     onToggleSids(event) {
         this.$toggleSids.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'sids',
-            `${this.$toggleSids.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'sids',
+        //     `${this.$toggleSids.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_SID_MAP);
     }
 
@@ -896,11 +896,11 @@ class UiController {
      */
     onToggleStars(event) {
         this.$toggleStars.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'stars',
-            `${this.$toggleStars.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'stars',
+        //     `${this.$toggleStars.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_STAR_MAP);
     }
 
@@ -911,11 +911,11 @@ class UiController {
      */
     onToggleTerrain(event) {
         this.$toggleTerrain.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'terrain',
-            `${this.$toggleTerrain.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'terrain',
+        //     `${this.$toggleTerrain.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this._eventBus.trigger(EVENT.TOGGLE_TERRAIN);
     }
 
@@ -928,11 +928,11 @@ class UiController {
      */
     onToggleTraffic(event) {
         this.$toggleTraffic.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'traffic',
-            `${this.$toggleTraffic.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'traffic',
+        //     `${this.$toggleTraffic.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this.trafficRateController.toggleDialog();
     }
 
@@ -943,11 +943,11 @@ class UiController {
     */
     onToggleTutorial(event) {
         this._eventBus.trigger(EVENT.TOGGLE_TUTORIAL);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'tutorial',
-            `${this.$toggleTutorial.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'tutorial',
+        //     `${this.$toggleTutorial.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
     }
 
     /**
@@ -959,11 +959,11 @@ class UiController {
      */
     onToggleVideoMap(event) {
         this.$toggleVideoMap.toggleClass(SELECTORS.CLASSNAMES.ACTIVE);
-        EventTracker.recordEvent(
-            TRACKABLE_EVENT.OPTIONS,
-            'video-map',
-            `${this.$toggleVideoMap.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
-        );
+        // EventTracker.recordEvent(
+        //     TRACKABLE_EVENT.OPTIONS,
+        //     'video-map',
+        //     `${this.$toggleVideoMap.hasClass(SELECTORS.CLASSNAMES.ACTIVE)}`
+        // );
         this.videoMapController.toggleDialog();
     }
 
@@ -975,7 +975,7 @@ class UiController {
      * @param event {jquery event}
      */
     onClickGithubLink(event) {
-        EventTracker.recordClickOnOutboundLink(event.target.href);
+        // EventTracker.recordClickOnOutboundLink(event.target.href);
     }
 }
 

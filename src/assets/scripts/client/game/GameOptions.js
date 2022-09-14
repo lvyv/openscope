@@ -1,6 +1,6 @@
 import _isNil from 'lodash/isNil';
 import EventBus from '../lib/EventBus';
-import EventTracker from '../EventTracker';
+// import EventTracker from '../EventTracker';
 import { GAME_OPTION_VALUES } from '../constants/gameOptionConstants';
 import { TRACKABLE_EVENT } from '../constants/trackableEvents';
 
@@ -111,7 +111,7 @@ export default class GameOptions {
         const optionStorageKey = this.buildStorageName(name);
 
         global.localStorage.setItem(optionStorageKey, value);
-        EventTracker.recordEvent(TRACKABLE_EVENT.SETTINGS, name, value);
+        // EventTracker.recordEvent(TRACKABLE_EVENT.SETTINGS, name, value);
 
         if (this._options[name].onChangeEventHandler) {
             this._eventBus.trigger(this._options[name].onChangeEventHandler, value);

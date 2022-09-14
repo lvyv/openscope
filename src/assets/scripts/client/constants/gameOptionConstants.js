@@ -35,20 +35,20 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.THEME,
         defaultValue: 'DEFAULT',
-        description: 'Scope Theme',
+        description: '控制中心界面主题',
         type: 'select',
         onChangeEventHandler: EVENT.SET_THEME,
         optionList: [
             {
-                displayLabel: 'Classic',
+                displayLabel: '传统',
                 value: 'CLASSIC'
             },
             {
-                displayLabel: 'Default',
+                displayLabel: '缺省',
                 value: 'DEFAULT'
             },
             {
-                displayLabel: 'Celestial',
+                displayLabel: '天空',
                 value: 'CELESTIAL'
             }
         ]
@@ -56,16 +56,16 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.TOWER_CONTROLLER,
         defaultValue: 'SYSTEM',
-        description: 'Tower Control (Experimental)',
+        description: '塔台控制(试验)',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
             {
-                displayLabel: 'System Controlled',
+                displayLabel: '系统控制',
                 value: 'SYSTEM'
             },
             {
-                displayLabel: 'User Controlled',
+                displayLabel: '用户控制',
                 value: 'USER'
             }
         ]
@@ -73,16 +73,16 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.CONTROL_METHOD,
         defaultValue: 'classic',
-        description: 'Control Method',
+        description: '控制方法',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
             {
-                displayLabel: 'Classic',
+                displayLabel: '传统',
                 value: 'classic'
             },
             {
-                displayLabel: 'Arrow Keys',
+                displayLabel: '方向键',
                 value: 'arrows'
             }
         ]
@@ -90,21 +90,21 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.DRAW_ILS_DISTANCE_SEPARATOR,
         defaultValue: 'from-theme',
-        description: 'Show trailing separation indicator on ILS',
+        description: '在 ILS 上显示尾随分隔指示器',
         help: 'Draw a trailing indicator 2.5 NM (4.6km) behind landing aircraft to help with traffic spacing',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
             {
-                displayLabel: 'From Theme',
+                displayLabel: '取决主题',
                 value: 'from-theme'
             },
             {
-                displayLabel: 'Yes',
+                displayLabel: '是',
                 value: 'yes'
             },
             {
-                displayLabel: 'No',
+                displayLabel: '否',
                 value: 'no'
             }
         ]
@@ -112,7 +112,7 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.PROJECTED_TRACK_LINE_LENGTHS,
         defaultValue: '1-2-4-8',
-        description: 'Projected Track Line (PTL) increments, in minutes',
+        description: '预计轨道线 (PTL) 增量，以分钟为单位',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
@@ -141,20 +141,20 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.DRAW_PROJECTED_PATHS,
         defaultValue: 'selected',
-        description: 'Draw aircraft projected path',
+        description: '绘制飞机投影轨迹',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
             {
-                displayLabel: 'Always',
+                displayLabel: '始终',
                 value: 'always'
             },
             {
-                displayLabel: 'Selected',
+                displayLabel: '选择',
                 value: 'selected'
             },
             {
-                displayLabel: 'Never',
+                displayLabel: '从不',
                 value: 'never'
             }
         ]
@@ -162,17 +162,17 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.SOFT_CEILING,
         defaultValue: 'yes',
-        description: 'Allow departures via climb',
+        description: '允许通过爬升离场',
         help: 'Normally aircraft departs the airspace by flying beyond the horizontal bounds.  If set to yes, aircraft may also depart the airspace by climbing above it.',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
             {
-                displayLabel: 'Yes',
+                displayLabel: '是',
                 value: 'yes'
             },
             {
-                displayLabel: 'No',
+                displayLabel: '否',
                 value: 'no'
             }
         ]
@@ -180,17 +180,17 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.MOUSE_CLICK_DRAG,
         defaultValue: 'right',
-        description: 'Panning Button',
+        description: '平移操作',
         help: 'Which mouse button (left or right) should drag the canvas when held',
         type: 'select',
         onChangeEventHandler: null,
         optionList: [
             {
-                displayLabel: 'Left Click',
+                displayLabel: '鼠标左键',
                 value: 'left'
             },
             {
-                displayLabel: 'Right Click',
+                displayLabel: '鼠标右键',
                 value: 'right'
             }
         ]
@@ -198,17 +198,17 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.RANGE_RINGS,
         defaultValue: 'default',
-        description: 'Range rings',
+        description: '距离环',
         help: 'Radius of range rings, in nautical miles',
         type: 'select',
         onChangeEventHandler: EVENT.RANGE_RINGS_CHANGE,
         optionList: [
             {
-                displayLabel: 'Default',
+                displayLabel: '缺省',
                 value: 'default'
             },
             {
-                displayLabel: 'Off',
+                displayLabel: '关闭',
                 value: 'off'
             },
             {
@@ -240,21 +240,21 @@ export const GAME_OPTION_VALUES = [
     {
         name: GAME_OPTION_NAMES.MEASURE_TOOL_PATH,
         defaultValue: '0',
-        description: 'Measure path style',
+        description: '测量路径样式',
         help: 'How the path is rendered when using the range/bearing measuring tool',
         type: 'select',
         onChangeEventHandler: EVENT.MEASURE_TOOL_STYLE_CHANGE,
         optionList: [
             {
-                displayLabel: 'Straight lines only',
+                displayLabel: '仅直线',
                 value: MEASURE_TOOL_STYLE.STRAIGHT
             },
             {
-                displayLabel: 'Arc to next fix, then straight',
+                displayLabel: '弧线到引导点, 之后直线',
                 value: MEASURE_TOOL_STYLE.ARC_TO_NEXT
             },
             {
-                displayLabel: 'All lines arced',
+                displayLabel: '所有线段为弧线',
                 value: MEASURE_TOOL_STYLE.ALL_ARCED
             }
         ]

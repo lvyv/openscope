@@ -11,7 +11,7 @@ import AirportController from '../airport/AirportController';
  */
 const UI_MAP_MODAL_TEMPLATE = `
     <div class="map-dialog dialog notSelectable">
-        <p class="dialog-title">Video Maps</p>
+        <p class="dialog-title">雷达图</p>
         <div class="dialog-body nice-scrollbar"></div>
     </div>`;
 

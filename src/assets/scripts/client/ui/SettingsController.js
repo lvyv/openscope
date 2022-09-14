@@ -11,7 +11,7 @@ import { SELECTORS } from '../constants/selectors';
  */
 const UI_SETTINGS_MODAL_TEMPLATE = `
     <div class="option-dialog dialog notSelectable">
-        <p class="dialog-title">Settings</p>
+        <p class="dialog-title">设置</p>
         <div class="dialog-body nice-scrollbar"></div>
     </div>`;
 
@@ -229,7 +229,7 @@ export default class SettingsController {
         const simulatorVersion = window.GLOBAL.VERSION;
         const $container = $(UI_DIALOG_FOOTER_TEMPLATE);
 
-        $container.text(`openScope ATC Simulator v${simulatorVersion}`);
+        $container.text(`站坪控制中心仿真器 v${simulatorVersion}`);
 
         return $container;
     }
